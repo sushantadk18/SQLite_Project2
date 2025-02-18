@@ -39,6 +39,7 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation ("de.hdodenhof:circleimageview:3.1.0")
     testImplementation(libs.junit)
+    implementation ("com.github.dhaval2404:imagepicker:2.1")
 
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
