@@ -24,7 +24,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_NAME + " (" +
                 "ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "IMAGE BLOB, " +
+                "IMAGE TEXT, " +
                 "NAME TEXT, " +
                 "DESCRIPTION TEXT)");
     }
@@ -34,7 +34,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(" DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(sqLiteDatabase);
     }
-    public boolean insertData(String id,byte[] image,String name,String description){
+    public boolean insertData(String id,String image,String name,String description){
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
         contentValues.put(COL1,id);
@@ -55,7 +55,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public boolean updateData(String id ,byte[] image,String name , String description){
+    public boolean updateData(String id ,String image,String name , String description){
         SQLiteDatabase sqLiteDatabase=this.getWritableDatabase();
         ContentValues contentValues= new ContentValues();
         contentValues.put(COL1,id);
